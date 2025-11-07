@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('Personel_id');
             $table->year('Periode_id');
             $table->integer('Kategori_id');
-            $table->integer('SuratTandaKehormatan_id')->nullable();
+            $table->integer('SuratTandaKehormatan')->nullable();
             $table->date('tanggalPengajuan');
             $table->string('namaFile_SK_TMT');
             $table->string('pathFile_SK_TMT');
@@ -24,7 +24,14 @@ return new class extends Migration
             $table->string('pathFile_SK_pangkat');
             $table->string('namaFile_SK_jabatan');
             $table->string('pathFile_SK_jabatan');
-            $table->string('status')->default('Diproses');
+            $table->enum('status', [
+                'Diajukan',
+                'Diterima',
+                'Diverifikasi',
+                'Diproses',
+                'Selesai',
+                'Ditolak'
+            ])->default('Diproses');
             $table->text('catatan')->nullable();
             $table->timestamps();
 

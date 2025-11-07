@@ -11,7 +11,7 @@ class Pengajuan extends Model
 
     protected $fillable = [
         'Personel_id', 'Periode_id', 'Kategori_id',
-        'SuratTandaKehormatan_id', 'tanggalPengajuan',
+        'SuratTandaKehormatan', 'tanggalPengajuan',
         'namaFile_SK_TMT', 'pathFile_SK_TMT',
         'namaFile_SK_pangkat', 'pathFile_SK_pangkat',
         'namaFile_SK_jabatan', 'pathFile_SK_jabatan',
